@@ -671,20 +671,20 @@
     top: 0; left: 0; right: 0;
     height: 4px;
   }
-  .band-card.b1::before { background: #EF4444; }
+  .band-card.b1::before { background: #f50404; }
   .band-card.b2::before { background: #F59E0B; }
-  .band-card.b3::before { background: #3B82F6; }
-  .band-card.b4::before { background: var(--success); }
+  .band-card.b3::before { background: #f7f303; }
+  .band-card.b4::before { background: #3ff308; }
   .band-range {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-weight: 900;
     margin-bottom: 8px;
   }
-  .band-card.b1 .band-range { color: #EF4444; }
+  .band-card.b1 .band-range { color: #f50404; }
   .band-card.b2 .band-range { color: #F59E0B; }
-  .band-card.b3 .band-range { color: #3B82F6; }
-  .band-card.b4 .band-range { color: var(--success); }
+  .band-card.b3 .band-range { color: #f7f303; }
+  .band-card.b4 .band-range { color: #3ff308; }
   .band-label {
     font-size: 13px;
     color: var(--slate-light);
@@ -774,7 +774,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">Strumento Gratuito · 5 minuti</div>
+    <div class="hero-badge">Strumento Gratuito · Scopri in 60" se la tua azienda cresce...o dipende ancora troppo da te</div>
     <h1>Scopri quanto è <span>davvero solida</span><br>la tua azienda</h1>
     <p class="hero-sub">Molte PMI crescono di fatturato ma diventano sempre più dipendenti dal titolare. Questo test gratuito ti mostra esattamente dove.</p>
     <div class="hero-checklist">
@@ -803,7 +803,7 @@
       <div class="stat-label">Aree di valutazione</div>
     </div>
     <div class="stat">
-      <div class="stat-num">5'</div>
+      <div class="stat-num">60"</div>
       <div class="stat-label">Per completarlo</div>
     </div>
     <div class="stat">
@@ -812,6 +812,263 @@
     </div>
   </div>
 </div>
+
+<!-- TEST -->
+<section class="test-section" id="test">
+  <div class="test-header">
+    <div class="section-eyebrow">Test di Autovalutazione</div>
+    <h2>Indice di Solidità Aziendale™</h2>
+    <p>Per ogni domanda scegli la risposta più vicina alla tua realtà. Non esistono risposte giuste o sbagliate.</p>
+    <div class="score-legend">
+      <div class="score-pill"><div class="score-pill-dot" style="background:#16A34A"></div> Sempre = 2 pt</div>
+      <div class="score-pill"><div class="score-pill-dot" style="background:#f7f303"></div> Più si che no = 1 pt</div>
+      <div class="score-pill"><div class="score-pill-dot" style="background:#F59E0B"></div> Più no che si = 0,5 pt</div>
+      <div class="score-pill"><div class="score-pill-dot" style="background:#f50404"></div> Mai = 0 pt</div>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span id="progress-text">Risposte: 0 / 16</span>
+      <span id="progress-score">Punteggio: 0 / 32</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div class="areas-grid" id="areas-grid">
+
+    <!-- LEADERSHIP -->
+    <div class="area-card open active" data-area="leadership">
+      <div class="area-header" onclick="toggleArea(this)">
+        <div class="area-icon">🎯</div>
+        <div class="area-title">AREA LEADERSHIP</div>
+        <div class="area-score-badge" id="score-leadership">0 / 8</div>
+      </div>
+      <div class="area-questions">
+        <div class="question" data-q="l1" data-area="leadership">
+          <p>1. I responsabili prendono decisioni in autonomia?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="l2" data-area="leadership">
+          <p>2. Le responsabilità sono chiaramente definite?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="l3" data-area="leadership">
+          <p>3. Gli obiettivi aziendali sono conosciuti dal team?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="l4" data-area="leadership">
+          <p>4. Le persone vengono valutate sui risultati?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORGANIZZAZIONE -->
+    <div class="area-card" data-area="organizzazione">
+      <div class="area-header" onclick="toggleArea(this)">
+        <div class="area-icon">⚙️</div>
+        <div class="area-title">AREA ORGANIZZAZIONE</div>
+        <div class="area-score-badge" id="score-organizzazione">0 / 8</div>
+      </div>
+      <div class="area-questions">
+        <div class="question" data-q="o1" data-area="organizzazione">
+          <p>1. I processi principali sono documentati?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="o2" data-area="organizzazione">
+          <p>2. Le riunioni producono decisioni concrete?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="o3" data-area="organizzazione">
+          <p>3. I problemi vengono risolti rapidamente?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="o4" data-area="organizzazione">
+          <p>4. L'azienda può funzionare senza il titolare per almeno due settimane?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMERCIALE -->
+    <div class="area-card" data-area="commerciale">
+      <div class="area-header" onclick="toggleArea(this)">
+        <div class="area-icon">📈</div>
+        <div class="area-title">AREA COMMERCIALE</div>
+        <div class="area-score-badge" id="score-commerciale">0 / 8</div>
+      </div>
+      <div class="area-questions">
+        <div class="question" data-q="c1" data-area="commerciale">
+          <p>1. Gli indicatori chiave di prestazione (KPI) commerciali sono monitorati regolarmente?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="c2" data-area="commerciale">
+          <p>2. Le attività commerciali sono pianificate?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="c3" data-area="commerciale">
+          <p>3. Esiste una previsione attendibile delle vendite?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="c4" data-area="commerciale">
+          <p>4. I commerciali vengono formati e affiancati?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERSONE -->
+    <div class="area-card" data-area="persone">
+      <div class="area-header" onclick="toggleArea(this)">
+        <div class="area-icon">👥</div>
+        <div class="area-title">AREA PERSONE</div>
+        <div class="area-score-badge" id="score-persone">0 / 8</div>
+      </div>
+      <div class="area-questions">
+        <div class="question" data-q="p1" data-area="persone">
+          <p>1. Hai un sistema di selezione efficace?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="p2" data-area="persone">
+          <p>2. Riesci ad attrarre candidati di qualità?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="p3" data-area="persone">
+          <p>3. Il turnover è sotto controllo?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+        <div class="question" data-q="p4" data-area="persone">
+          <p>4. Le persone migliori rimangono in azienda?</p>
+          <div class="q-options">
+            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
+            <button class="q-btn" onclick="selectAnswer(this, 1)"> Più si che no</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0.5)"> Più no che si</button>
+            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /areas-grid -->
+
+  <!-- TOTAL -->
+  <div class="total-score-wrap">
+    <div class="total-score-left">
+      <h3>Il tuo punteggio totale</h3>
+      <p>Rispondi a tutte le domande per completare la valutazione</p>
+    </div>
+    <div>
+      <div class="total-score-num" id="total-num">0</div>
+      <span class="total-score-max">/ 32</span>
+    </div>
+  </div>
+  <div class="score-message" id="score-message"></div>
+
+</section>
+
+<!-- HOW TO READ -->
+<section class="read-section">
+  <div class="read-inner">
+    <div class="section-eyebrow" style="text-align:center;margin-bottom:8px;">Come leggere il risultato</div>
+    <h2>Cosa significa il tuo punteggio</h2>
+    <div class="bands-grid">
+      <div class="band-card b1">
+        <div class="band-range">0–10,5</div>
+        <div class="band-label">Azienda fortemente dipendente dal titolare con alto rischio latente. Può sembrare che tutto proceda nella normalità, ma ci sono margini di miglioramenti! Intervento urgente necessario.</div>
+</div>
+      <div class="band-card b2">
+        <div class="band-range">11–20,5</div>
+        <div class="band-label">Discrete basi con presenza di aree critiche da affrontare. Probabilmente il problema è la grande fatica e responsabilità da mettere in cambio di un risultato non adeguato, che tende a ridurre la motivazione. In genere le persone che operanmo trainano con la propria operatività (fanno per loro e per gli altri) si sentono sovraccariche, sopraffatte e stanche.</div>
+      </div>
+      <div class="band-card b3">
+        <div class="band-range">21–28,5</div>
+        <div class="band-label">Buone basi, struttura in crescita con andamento positivo che sta passando al livello successivo. Se rimani dove sei, non hai bisogno di nulla, ma se vuoi passare al livello successivo ci sono alcuni miglioramenti necessari da fare.</div>
+      </div>
+      <div class="band-card b4">
+        <div class="band-range">29–32</div>
+        <div class="band-label">Organizzazione avanzata e ottime capacità di crescita. Non hai bisogno di nulla, nemmeno di noi e sei sulla strada giusta. Contattaci solo per avere l'attestato di eccellenza ed un libro in omaggio e per aiutarci a far crescere i tuoi colleghi imprenditori.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about">
@@ -842,226 +1099,12 @@
   </div>
 </section>
 
-<!-- TEST -->
-<section class="test-section" id="test">
-  <div class="test-header">
-    <div class="section-eyebrow">Test di Autovalutazione</div>
-    <h2>Indice di Maturità Aziendale™</h2>
-    <p>Per ogni domanda scegli la risposta più vicina alla tua realtà. Non esistono risposte giuste o sbagliate.</p>
-    <div class="score-legend">
-      <div class="score-pill"><div class="score-pill-dot" style="background:#16A34A"></div> Sempre = 2 pt</div>
-      <div class="score-pill"><div class="score-pill-dot" style="background:#F59E0B"></div> A volte = 1 pt</div>
-      <div class="score-pill"><div class="score-pill-dot" style="background:#EF4444"></div> Mai = 0 pt</div>
-    </div>
-  </div>
-
-  <div class="progress-wrap">
-    <div class="progress-meta">
-      <span id="progress-text">Risposte: 0 / 16</span>
-      <span id="progress-score">Punteggio: 0 / 32</span>
-    </div>
-    <div class="progress-bar-bg">
-      <div class="progress-bar-fill" id="progress-fill"></div>
-    </div>
-  </div>
-
-  <div class="areas-grid" id="areas-grid">
-
-    <!-- LEADERSHIP -->
-    <div class="area-card open active" data-area="leadership">
-      <div class="area-header" onclick="toggleArea(this)">
-        <div class="area-icon">🎯</div>
-        <div class="area-title">AREA LEADERSHIP</div>
-        <div class="area-score-badge" id="score-leadership">0 / 8</div>
-      </div>
-      <div class="area-questions">
-        <div class="question" data-q="l1" data-area="leadership">
-          <p>1. I responsabili prendono decisioni in autonomia?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="l2" data-area="leadership">
-          <p>2. Le responsabilità sono chiaramente definite?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="l3" data-area="leadership">
-          <p>3. Gli obiettivi aziendali sono conosciuti dal team?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="l4" data-area="leadership">
-          <p>4. Le persone vengono valutate sui risultati?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ORGANIZZAZIONE -->
-    <div class="area-card" data-area="organizzazione">
-      <div class="area-header" onclick="toggleArea(this)">
-        <div class="area-icon">⚙️</div>
-        <div class="area-title">AREA ORGANIZZAZIONE</div>
-        <div class="area-score-badge" id="score-organizzazione">0 / 8</div>
-      </div>
-      <div class="area-questions">
-        <div class="question" data-q="o1" data-area="organizzazione">
-          <p>1. I processi principali sono documentati?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="o2" data-area="organizzazione">
-          <p>2. Le riunioni producono decisioni concrete?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="o3" data-area="organizzazione">
-          <p>3. I problemi vengono risolti rapidamente?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="o4" data-area="organizzazione">
-          <p>4. L'azienda può funzionare senza il titolare per almeno una settimana?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMMERCIALE -->
-    <div class="area-card" data-area="commerciale">
-      <div class="area-header" onclick="toggleArea(this)">
-        <div class="area-icon">📈</div>
-        <div class="area-title">AREA COMMERCIALE</div>
-        <div class="area-score-badge" id="score-commerciale">0 / 8</div>
-      </div>
-      <div class="area-questions">
-        <div class="question" data-q="c1" data-area="commerciale">
-          <p>1. I KPI commerciali sono monitorati regolarmente?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="c2" data-area="commerciale">
-          <p>2. Le attività commerciali sono pianificate?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="c3" data-area="commerciale">
-          <p>3. Esiste una previsione attendibile delle vendite?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="c4" data-area="commerciale">
-          <p>4. I commerciali vengono formati e affiancati?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PERSONE -->
-    <div class="area-card" data-area="persone">
-      <div class="area-header" onclick="toggleArea(this)">
-        <div class="area-icon">👥</div>
-        <div class="area-title">AREA PERSONE</div>
-        <div class="area-score-badge" id="score-persone">0 / 8</div>
-      </div>
-      <div class="area-questions">
-        <div class="question" data-q="p1" data-area="persone">
-          <p>1. Hai un sistema di selezione efficace?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="p2" data-area="persone">
-          <p>2. Riesci ad attrarre candidati di qualità?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="p3" data-area="persone">
-          <p>3. Il turnover è sotto controllo?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-        <div class="question" data-q="p4" data-area="persone">
-          <p>4. Le persone migliori rimangono in azienda?</p>
-          <div class="q-options">
-            <button class="q-btn" onclick="selectAnswer(this, 2)">✓ Sempre</button>
-            <button class="q-btn" onclick="selectAnswer(this, 1)">~ A volte</button>
-            <button class="q-btn" onclick="selectAnswer(this, 0)">✗ Mai</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /areas-grid -->
-
-  <!-- TOTAL -->
-  <div class="total-score-wrap">
-    <div class="total-score-left">
-      <h3>Il tuo punteggio totale</h3>
-      <p>Rispondi a tutte le domande per completare la valutazione</p>
-    </div>
-    <div>
-      <div class="total-score-num" id="total-num">0</div>
-      <span class="total-score-max">/ 32</span>
-    </div>
-  </div>
-  <div class="score-message" id="score-message"></div>
-
-</section>
-
 <!-- FORM -->
 <section class="form-section" id="report">
   <div class="form-inner">
     <div class="form-header">
       <div class="section-eyebrow">Report Riservato</div>
-      <h2>Ricevi un confronto strategico personalizzato</h2>
+      <h2>Ricevi un confronto strategico personalizzato ed un libro di management in omaggio</h2>
       <p>Dopo l'invio riceverai un contatto personale per analizzare il tuo risultato e identificare le aree che meritano maggiore attenzione.</p>
     </div>
     <div class="form-card">
@@ -1071,7 +1114,7 @@
           <input type="text" id="f-nome" placeholder="Mario" required>
         </div>
         <div class="form-group">
-          <label>Cognome <span>*</span></label>
+          <label>Cognome</label>
           <input type="text" id="f-cognome" placeholder="Rossi" required>
         </div>
       </div>
@@ -1110,7 +1153,7 @@
           <input type="tel" id="f-tel" placeholder="+39 333 000 0000" required>
         </div>
         <div class="form-group">
-          <label>Email <span>*</span></label>
+          <label>Email</label>
           <input type="email" id="f-email" placeholder="mario@azienda.it" required>
         </div>
       </div>
@@ -1133,31 +1176,6 @@
   </div>
 </section>
 
-<!-- HOW TO READ -->
-<section class="read-section">
-  <div class="read-inner">
-    <div class="section-eyebrow" style="text-align:center;margin-bottom:8px;">Come leggere il risultato</div>
-    <h2>Cosa significa il tuo punteggio</h2>
-    <div class="bands-grid">
-      <div class="band-card b1">
-        <div class="band-range">0–10</div>
-        <div class="band-label">Azienda fortemente dipendente dal titolare. Intervento urgente necessario.</div>
-      </div>
-      <div class="band-card b2">
-        <div class="band-range">11–20</div>
-        <div class="band-label">Buone basi ma presenza di aree critiche da affrontare.</div>
-      </div>
-      <div class="band-card b3">
-        <div class="band-range">21–28</div>
-        <div class="band-label">Struttura in crescita con alcuni miglioramenti necessari.</div>
-      </div>
-      <div class="band-card b4">
-        <div class="band-range">29–32</div>
-        <div class="band-label">Organizzazione avanzata e buona capacità di crescita.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -1277,7 +1295,7 @@
 
     // Build WhatsApp message to Gioacchino
     const msg = encodeURIComponent(
-      `🔔 Nuova richiesta – Indice di Maturità Aziendale™\n\n` +
+      `🔔 Nuova richiesta – Indice di Solidità Aziendale™\n\n` +
       `👤 Nome: ${nome} ${cognome}\n` +
       `🏢 Azienda: ${azienda}\n` +
       `💼 Ruolo: ${ruolo}\n` +
