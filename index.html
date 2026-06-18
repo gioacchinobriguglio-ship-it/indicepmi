@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-  emailjs.initAZJQyrN_ZqZJZHBrp;
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indice di Solidità Aziendale™ – Gioacchino Briguglio</title>
@@ -812,7 +807,7 @@
     </div>
     <div class="hero-cta-wrap">
       <a href="#test" class="btn-primary">Inizia il Test Gratuito →</a>
-      <p class="hero-note"><strong>Nessuna registrazione</strong> · Risultato immediato</p>
+      <p class="hero-note"><strong>Nessuna registrazione</strong> · Risultato riservato</p>
     </div>
   </div>
 </section>
@@ -845,12 +840,6 @@
     <div class="section-eyebrow">Test di Autovalutazione</div>
     <h2>Indice di Solidità Aziendale™</h2>
     <p>Per ogni domanda scegli la risposta più vicina alla tua realtà. Non esistono risposte giuste o sbagliate.</p>
-    <div class="score-legend">
-      <div class="score-pill"><div class="score-pill-dot" style="background:#16A34A"></div> Sempre = 2 pt</div>
-      <div class="score-pill"><div class="score-pill-dot" style="background:#f7f303"></div> Più si che no = 1 pt</div>
-      <div class="score-pill"><div class="score-pill-dot" style="background:#F59E0B"></div> Più no che si = 0,5 pt</div>
-      <div class="score-pill"><div class="score-pill-dot" style="background:#f50404"></div> Mai = 0 pt</div>
-    </div>
   </div>
 
   <div class="progress-wrap">
@@ -1055,18 +1044,45 @@
 
   </div><!-- /areas-grid -->
 
-  <!-- TOTAL -->
-  <div class="total-score-wrap">
+  <!-- TOTAL — in attesa (visibile mentre si risponde) -->
+  <div class="total-score-wrap" id="score-pending-wrap">
     <div class="total-score-left">
       <h3>Il tuo punteggio totale</h3>
-      <p>Rispondi a tutte le domande per completare la valutazione</p>
+      <p id="score-pending-sub">Rispondi a tutte le 16 domande per sbloccare il risultato</p>
     </div>
-    <div>
-      <div class="total-score-num" id="total-num">0</div>
+    <div style="display:flex;align-items:baseline;gap:4px">
+      <div class="total-score-num" style="filter:blur(8px);user-select:none;pointer-events:none" id="total-num-blurred">??</div>
       <span class="total-score-max">/ 32</span>
     </div>
   </div>
-  <div class="score-message" id="score-message"></div>
+
+  <!-- CTA sblocco — appare solo quando tutte le domande sono risposte -->
+  <div id="unlock-cta" style="display:none;max-width:780px;margin:16px auto 0;">
+    <div style="background:linear-gradient(135deg,#1E2A38 0%,#2F3E50 100%);border-radius:16px;padding:32px;text-align:center;">
+      <div style="font-size:36px;margin-bottom:12px;">🔒</div>
+      <h3 style="font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:white;margin-bottom:10px;">Hai completato il test!</h3>
+      <p style="font-size:15px;color:#A8B8CC;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;">Il tuo risultato è pronto. Inserisci i tuoi dati per ricevere il punteggio dettagliato e un confronto strategico personalizzato.</p>
+      <a href="#report" class="btn-primary" style="display:inline-block">Sblocca il tuo risultato →</a>
+      <p style="margin-top:14px;font-size:12px;color:#4A5568;">🔒 Nessuna vendita aggressiva · Solo un confronto professionale</p>
+    </div>
+  </div>
+
+  <!-- Messaggio punteggio — visibile solo DOPO l'invio del form -->
+  <div class="score-message" id="score-message" style="display:none"></div>
+
+  <!-- Punteggio reale sbloccato — visibile solo DOPO l'invio -->
+  <div id="score-revealed" style="display:none;max-width:780px;margin:16px auto 0;">
+    <div style="background:linear-gradient(135deg,#1E2A38 0%,#2F3E50 100%);border-radius:16px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px;">Il tuo punteggio totale</h3>
+        <p style="font-size:14px;color:#7A8FA6;">Valutazione completata</p>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:4px">
+        <div class="total-score-num" id="total-num">0</div>
+        <span class="total-score-max">/ 32</span>
+      </div>
+    </div>
+  </div>
 
 </section>
 
@@ -1129,9 +1145,9 @@
 <section class="form-section" id="report">
   <div class="form-inner">
     <div class="form-header">
-      <div class="section-eyebrow">Report Riservato</div>
-      <h2>Ricevi un confronto strategico personalizzato ed un libro di management in omaggio</h2>
-      <p>Dopo l'invio riceverai un contatto personale per analizzare il tuo risultato e identificare le aree che meritano maggiore attenzione.</p>
+      <div class="section-eyebrow">Sblocca il tuo Risultato</div>
+      <h2>Ricevi un confronto strategico personalizzato GRATUITO ed un libro di management in OMAGGIO</h2>
+      <p>Compila il form per sbloccare il tuo Indice di Solidità Aziendale™ e identificare le aree che meritano maggiore attenzione.</p>
     </div>
     <div class="form-card">
       <div class="form-row">
@@ -1184,8 +1200,8 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Punteggio ottenuto</label>
-        <input type="text" id="f-score" class="score-display-field" readonly placeholder="Completa prima il test ↑">
+        <label id="f-score-label">🔒 Punteggio — si sblocca dopo l'invio</label>
+        <input type="text" id="f-score" class="score-display-field" readonly placeholder="Completa prima il test ↑" style="filter:blur(5px);pointer-events:none">
       </div>
       <div class="form-group">
         <label>Qual è oggi la principale sfida della tua azienda?</label>
@@ -1194,12 +1210,12 @@
       <button class="btn-submit" onclick="submitForm()">
         Invia e Richiedi il Confronto Strategico →
       </button>
-      <div class="form-disclaimer">
-        ⚠️ Analizziamo solo 3 aziende al mese. 
-        Le richieste vengono valutate in ordine di arrivo.</p></div>
       <p class="form-disclaimer">
         🔒 I tuoi dati sono al sicuro e non verranno ceduti a terzi.<br>
         Nessuna vendita aggressiva. Solo un confronto professionale e riservato.
+      </p>
+      <p class="form-disclaimer" style="margin-top:12px;font-size:13px;color:var(--slate);font-weight:600;border-top:1px solid var(--border);padding-top:14px;">
+        ⚠️ Analizziamo solo 3 aziende al mese. Le richieste vengono valutate in ordine di arrivo.
       </p>
     </div>
   </div>
@@ -1222,7 +1238,7 @@
   <div class="success-box">
     <div class="success-icon">✅</div>
     <h3>Richiesta inviata!</h3>
-    <p>Grazie per aver completato l'Indice di Maturità Aziendale™.<br><br>Gioacchino ti contatterà personalmente entro 24 ore per analizzare il tuo risultato e condividere con te le osservazioni più rilevanti.<br><br>Nel frattempo, se vuoi parlare subito, scrivilo su WhatsApp.</p>
+    <p>Il tuo punteggio è ora visibile nella pagina! Gioacchino ti contatterà personalmente entro 24 ore per analizzare il tuo risultato e condividere con te le osservazioni più rilevanti.<br><br>Nel frattempo, se vuoi parlare subito, scrivilo su WhatsApp.</p>
     <button class="btn-close-success" onclick="document.getElementById('success-overlay').classList.remove('visible')">Chiudi</button>
   </div>
 </div>
@@ -1231,11 +1247,12 @@
   // State
   const answers = {};
   const areaScores = { leadership: 0, organizzazione: 0, commerciale: 0, persone: 0 };
+  let finalScore = 0;
+  let formSubmitted = false;
 
   function toggleArea(header) {
     const card = header.closest('.area-card');
     const isOpen = card.classList.contains('open');
-    // Close all
     document.querySelectorAll('.area-card').forEach(c => c.classList.remove('open'));
     if (!isOpen) card.classList.add('open');
   }
@@ -1244,17 +1261,13 @@
     const question = btn.closest('.question');
     const qId = question.dataset.q;
     const area = question.dataset.area;
-
-    // Deselect siblings
     question.querySelectorAll('.q-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
-
     answers[qId] = { value, area };
     recalculate();
   }
 
   function recalculate() {
-    // Reset area scores
     Object.keys(areaScores).forEach(k => areaScores[k] = 0);
     let total = 0;
     let answered = 0;
@@ -1265,40 +1278,71 @@
       answered++;
     });
 
-    // Update area badges
-    document.getElementById('score-leadership').textContent = areaScores.leadership + ' / 8';
-    document.getElementById('score-organizzazione').textContent = areaScores.organizzazione + ' / 8';
-    document.getElementById('score-commerciale').textContent = areaScores.commerciale + ' / 8';
-    document.getElementById('score-persone').textContent = areaScores.persone + ' / 8';
-
-    // Update total
-    document.getElementById('total-num').textContent = total;
+    // Update area badges — mostrano domande risposte, non il punteggio
+    const areaCount = { leadership: 0, organizzazione: 0, commerciale: 0, persone: 0 };
+    Object.values(answers).forEach(a => areaCount[a.area]++);
+    document.getElementById('score-leadership').textContent = areaCount.leadership + ' / 4 ✓';
+    document.getElementById('score-organizzazione').textContent = areaCount.organizzazione + ' / 4 ✓';
+    document.getElementById('score-commerciale').textContent = areaCount.commerciale + ' / 4 ✓';
+    document.getElementById('score-persone').textContent = areaCount.persone + ' / 4 ✓';
 
     // Progress bar
     const pct = (answered / 16) * 100;
     document.getElementById('progress-fill').style.width = pct + '%';
     document.getElementById('progress-text').textContent = 'Risposte: ' + answered + ' / 16';
-    document.getElementById('progress-score').textContent = 'Punteggio: ' + total + ' / 32';
+    // Progress score rimane nascosto finché non è sbloccato
+    document.getElementById('progress-score').textContent = answered < 16 ? 'Punteggio: ??? / 32' : 'Punteggio: sbloccabile ↓';
 
-    // Score field in form
+    finalScore = total;
+
     if (answered === 16) {
+      // Aggiorna il numero sfocato con qualcosa di suggestivo ma illeggibile
+      document.getElementById('total-num-blurred').textContent = total;
+      document.getElementById('score-pending-sub').textContent = 'Il tuo risultato è pronto — sblocca qui sotto';
+      // Mostra la CTA di sblocco
+      document.getElementById('unlock-cta').style.display = 'block';
+      // Se il form è già stato inviato, mostra subito il risultato
+      if (formSubmitted) revealScore(total);
+      // Compila il campo nascosto nel form
       document.getElementById('f-score').value = total + ' / 32';
-      showScoreMessage(total);
     } else {
+      document.getElementById('total-num-blurred').textContent = '??';
+      document.getElementById('score-pending-sub').textContent = 'Rispondi a tutte le 16 domande per sbloccare il risultato';
+      document.getElementById('unlock-cta').style.display = 'none';
       document.getElementById('f-score').value = '';
-      document.getElementById('score-message').classList.remove('visible');
     }
+  }
+
+  function revealScore(score) {
+    // Mostra punteggi reali nei badge delle aree
+    document.getElementById('score-leadership').textContent = areaScores.leadership + ' / 8';
+    document.getElementById('score-organizzazione').textContent = areaScores.organizzazione + ' / 8';
+    document.getElementById('score-commerciale').textContent = areaScores.commerciale + ' / 8';
+    document.getElementById('score-persone').textContent = areaScores.persone + ' / 8';
+    // Sblocca il campo punteggio nel form
+    const fScore = document.getElementById('f-score');
+    fScore.style.filter = 'none';
+    fScore.style.pointerEvents = 'auto';
+    document.getElementById('f-score-label').textContent = '🏆 Il tuo punteggio sbloccato';
+    // Mostra il blocco punteggio reale
+    document.getElementById('score-revealed').style.display = 'block';
+    document.getElementById('total-num').textContent = score;
+    // Nascondi il blocco "pending"
+    document.getElementById('score-pending-wrap').style.display = 'none';
+    document.getElementById('unlock-cta').style.display = 'none';
+    // Mostra il messaggio interpretativo
+    showScoreMessage(score);
   }
 
   function showScoreMessage(score) {
     const msg = document.getElementById('score-message');
     let text = '';
-    if (score <= 10) text = '🔴 Punteggio: ' + score + '/32 — La tua azienda è fortemente dipendente dal titolare. Ci sono aree critiche che richiedono attenzione immediata. Ti consiglio di richiedere un confronto riservato.';
+    if (score <= 10) text = '🔴 Punteggio: ' + score + '/32 — La tua azienda è fortemente dipendente dal titolare. Ci sono aree critiche che richiedono attenzione immediata. Ti contatterò personalmente per analizzare la situazione.';
     else if (score <= 20) text = '🟡 Punteggio: ' + score + '/32 — Hai delle basi, ma emergono aree critiche che stanno limitando la crescita. Un confronto strategico può aiutarti a identificare le priorità.';
     else if (score <= 28) text = '🔵 Punteggio: ' + score + '/32 — La tua struttura è in crescita. Con alcuni interventi mirati puoi fare un salto di qualità significativo.';
     else text = '🟢 Punteggio: ' + score + '/32 — Complimenti! La tua organizzazione è avanzata. Un confronto può aiutarti a consolidare i risultati e individuare le prossime opportunità.';
     msg.textContent = text;
-    msg.classList.add('visible');
+    msg.style.display = 'block';
   }
 
   
@@ -1361,6 +1405,10 @@ async function submitForm() {
       );
 
       window.open(`https://wa.me/393273891195?text=${msg}`, '_blank');
+
+      // Sblocca il punteggio
+      formSubmitted = true;
+      revealScore(finalScore);
 
       document.getElementById('success-overlay').classList.add('visible');
 
